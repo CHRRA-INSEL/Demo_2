@@ -4,10 +4,10 @@
 name: Java CI with Maven
 
 on:
-  #push:
-  #  branches: [ Demo_files ]
-  #pull_request:
-  #  branches: [ Demo_files ]
+  push:
+    branches: [ Demo_files ]
+  pull_request:
+    branches: [ Demo_files ]
   create:
 
 jobs:
