@@ -4,19 +4,18 @@
 name: Java CI on Tag created
 
 on:
-  #push:
-  #  branches: [ Demo_files ]
-  #pull_request:
-  #  branches: [ Demo_files ]
-  create:
+  push:
+    tags:
+      - '*'
 
 jobs:
-  tag-new-versions:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-      - uses: salsify/action-detect-and-tag-new-version@v2
-        with:
-          version-command: echo ${{current-version}}
+    - name: Get tag
+      id: tag
+      uses: dawidd6/action-get-tag@v1
+    - name: Use tag
+      run: echo ${{steps.tag.outputs.tag}}
