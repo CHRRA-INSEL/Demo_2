@@ -13,9 +13,19 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    #steps:
+    #- name: Get tag
+    #  id: tag
+    #  uses: dawidd6/action-get-tag@v1
+    #- name: Use tag
+    #  run: echo ${{steps.tag.outputs.tag}}
     steps:
-    - name: Get tag
-      id: tag
-      uses: dawidd6/action-get-tag@v1
-    - name: Use tag
-      run: echo ${{steps.tag.outputs.tag}}
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName
+        with:
+          tagRegex: "(?<package>.*)-(?<version>.*)" 
+      - name: Some other step # Output usage example
+        with:
+          dirname: ${{ steps.tagName.outputs.package }}
+          tagname: ${{ steps.tagName.outputs.version }}
+
