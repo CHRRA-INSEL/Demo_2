@@ -31,7 +31,7 @@ jobs:
         with:
           dirname: ${{ steps.tagName.outputs.package }}
           tagname: ${{ steps.tagName.outputs.version }}
-          #run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
+          run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
       #- name: Something to do
       #  run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
       
