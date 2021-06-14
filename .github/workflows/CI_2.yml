@@ -20,18 +20,17 @@ jobs:
     #- name: Use tag
     #  run: echo ${{steps.tag.outputs.tag}}
     steps:
-      - name: Get tag name
-        id: tagName
       - uses: olegtarasov/get-tag@v2.1        
+        id: tagName
         with:
           tagRegex: "(?<package>.*)-(?<version>.*)" 
           
-      - name: Some other step # Output usage example
-        with:
-          dirname: ${{ steps.tagName.outputs.package }}
-          tagname: ${{ steps.tagName.outputs.version }}
-          run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
-      - name: Something to do
-        run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
+      #- name: Some other step # Output usage example
+      #  with:
+      #    dirname: ${{ steps.tagName.outputs.package }}
+      #    tagname: ${{ steps.tagName.outputs.version }}
+      #    run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
+      #- name: Something to do
+      #  run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
       
 
