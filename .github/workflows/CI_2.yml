@@ -19,9 +19,9 @@ jobs:
     #  uses: dawidd6/action-get-tag@v1
     #- name: Use tag
     #  run: echo ${{steps.tag.outputs.tag}}
-    steps:
-      - name: Get tag name
+    steps:      
       - uses: olegtarasov/get-tag@v2.1        
+        name: Get tag name
         id: tagName
         with:
           tagRegex: "(?<package>.*)-(?<version>.*)" 
