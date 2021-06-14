@@ -24,7 +24,8 @@ jobs:
         name: Get tag name
         id: tagName
         with:
-          tagRegex: "(?<package>.*)-(?<version>.*)" 
+          tagRegex: "(v)(?<version>.*.*)" 
+          tagRegexGroup: 1 # Optional. Default is 1.
           
       - name: Some other step # Output usage example
         with:
