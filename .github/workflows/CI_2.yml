@@ -24,14 +24,15 @@ jobs:
         name: Get tag name
         id: tagName
         with:
-          tagRegex: "(v)(?<version>.*.*)" 
+          tagRegex: "(?<package>.*)-(?<version>.*)" 
           tagRegexGroup: 1 # Optional. Default is 1.
           
       - name: Some other step # Output usage example
+        uses: olegtarasov/get-tag@v2.1        
         with:
           dirname: ${{ steps.tagName.outputs.package }}
           tagname: ${{ steps.tagName.outputs.version }}          
-          name: Something to do
-          run: echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
+      - name: Something to do
+        run: echo $GIT_TAG_NAME; echo ${{ steps.tagName.outputs.package }}; echo ${{ steps.tagName.outputs.version }}
       
 
