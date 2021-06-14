@@ -20,6 +20,7 @@ jobs:
     #- name: Use tag
     #  run: echo ${{steps.tag.outputs.tag}}
     steps:
+      - name: Get tag name
       - uses: olegtarasov/get-tag@v2.1        
         id: tagName
         with:
