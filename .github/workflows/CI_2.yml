@@ -20,8 +20,9 @@ jobs:
     #- name: Use tag
     #  run: echo ${{steps.tag.outputs.tag}}
     steps:
-      - uses: olegtarasov/get-tag@v2.1
+      - name: Get tag name
         id: tagName
+      - uses: olegtarasov/get-tag@v2.1        
         with:
           tagRegex: "(?<package>.*)-(?<version>.*)" 
           
