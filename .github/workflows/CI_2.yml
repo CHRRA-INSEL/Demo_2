@@ -13,15 +13,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    #steps:
-    #- name: Get tag
-    #  id: tag
-    #  uses: dawidd6/action-get-tag@v1
-    #- name: Use tag
-    #  run: echo ${{steps.tag.outputs.tag}}
     steps:      
       - uses: olegtarasov/get-tag@v2.1        
-        name: Get tag name
+        name: Filter Tag Name
         id: tagName
         with:
            tagRegex: "(\\d.*\\d)"
