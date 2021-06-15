@@ -24,11 +24,10 @@ jobs:
         name: Get tag name
         id: tagName
         with:
-          tagRegex: "^(v | V)*"                     
-      - name: Some other step # Output usage example
-        uses: olegtarasov/get-tag@v2.1        
-        with:
-          tagRegex: "^(v | V)*"                     
+           tagRegex: "*"                     
+#           tagRegex: "^(v | V)*"                     
+      #- name: Some other step # Output usage example
+      #  uses: olegtarasov/get-tag@v2.1                
       #  with:
       #    dirname: ${{ steps.tagName.outputs.package }}
       #    tagname: ${{ steps.tagName.outputs.version }}          
