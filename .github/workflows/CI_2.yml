@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:      
-      - uses: olegtarasov/get-tag@v2.1        
-        name: Filter Tag Name
+      - name: Filter Tag Name
+        uses: olegtarasov/get-tag@v2.1        
         id: tagName
         with:
            tagRegex: "(\\d.*\\d)"
