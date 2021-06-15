@@ -24,7 +24,7 @@ jobs:
         name: Get tag name
         id: tagName
         with:
-           tagRegex: "(.*)"
+           tagRegex: "(\\d.\\d.\\d)"
 #           tagRegex: "^(v | V)*"                     
       #- name: Some other step # Output usage example
       #  uses: olegtarasov/get-tag@v2.1                
